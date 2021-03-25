@@ -79,7 +79,7 @@ test_hparam_1 = {
         "data_name": "data",
         "feature_convert_types": feature_convert_types,
         "feature_original_types": feature_original_types,
-        "files": "{}/record/e2e_s2s.1.tf_record".format(tfrecord_data_dir) # you should replace `e2e_s2s` with other methods manually
+        "files": "{}/record/e2e_t5_small.1.tf_record".format(tfrecord_data_dir) # you should replace `e2e_s2s` with other methods manually
     },
     
     "shuffle": False
@@ -92,7 +92,7 @@ test_hparam_2 = {
         "data_name": "data",
         "feature_convert_types": feature_convert_types,
         "feature_original_types": feature_original_types,
-        "files": "{}/record/e2e_s2s.2.tf_record".format(tfrecord_data_dir) # you should replace `e2e_s2s` with other methods manually
+        "files": "{}/record/e2e_t5_small.2.tf_record".format(tfrecord_data_dir) # you should replace `e2e_s2s` with other methods manually
     },
 
     "shuffle": False

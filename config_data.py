@@ -1,4 +1,7 @@
 import os
+max_seq_length = 128
+num_classes = 2
+num_train_data = 174449
 import tensorflow as tf
 
 flags = tf.flags
