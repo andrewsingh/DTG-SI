@@ -18,15 +18,16 @@ This repo contains the code of the following paper:
 
 The code has been tested on:
  - `Python 3.6.0 and Python 3.7.6`
- - `tensorflow-gpu==1.14.0`
- - `texar-tf==0.2.1`
+ - `tensorflow-gpu==1.12.0`
  - `cuda 10.0`
+ - `texar-tf==0.2.0-unreleased`
+
  
 ** NOTE **: 
-Due to some compatibility issues, the repo is only compatible by installing `texar==0.2.1` from source, which is as follows:
+If you would like to evaluate the content score for E2E data, you need to install `texar==0.2.0-unreleased`, which is provided [here](https://drive.google.com/file/d/1_3h8nDg12IGfJxqgmTN5o0PphTQ9i2Dh/view?usp=sharing):
+Pls download， unzip and install from source: 
 ```bash
-wget https://github.com/asyml/texar/archive/v0.2.1.zip
-cd texar && pip install .
+pip install .
 ```
  
 Run the following command:
@@ -42,11 +43,11 @@ If you'd like to evaluate the IE for the NBA dataset after training, you need to
 
 ## Data Preparation
 
-The dataset developed in the paper is in the [repo](https://github.com/ZhitingHu/text_content_manipulation). 
+The dataset developed in the paper is in the [repo](https://github.com/ha-lins/DTG-SI-data). 
 Clone the repo and move them into the current directory as:
 ```
-git clone https://github.com/ZhitingHu/text_content_manipulation
-cd text_content_manipulation/
+git clone https://github.com/ha-lins/DTG-SI-data.git
+cd DTG-SI-data/
 mv nba_data/ ../nba_data
 mv e2e_data/ ../e2e_data
 ```
