@@ -4,16 +4,18 @@ num_classes = 2
 num_train_data = 174449
 import tensorflow as tf
 
-flags = tf.flags
-flags.DEFINE_string("dataset", "nba", "The data config.")
+# flags = tf.flags
+# flags.DEFINE_string("dataset", "nba", "The data config.")
+
+dataset_dir = 'e2e_data'
 
 # load all entities
-if 'nba' in flags.config_data:
-    dataset_dir = 'nba_data'
-elif 'e2e' in flags.config_data:
-    dataset_dir = 'e2e_data'
-else:
-    print('[info] You need to choose one dataset.')
+# if 'nba' in flags.config_data:
+#     dataset_dir = 'nba_data'
+# elif 'e2e' in flags.config_data:
+#     dataset_dir = 'e2e_data'
+# else:
+#     print('[info] You need to choose one dataset.')
 
 modes = ['train', 'val', 'test']
 mode_to_filemode = {

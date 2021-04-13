@@ -13,11 +13,13 @@ import tensorflow as tf
 from tensorflow.contrib.seq2seq import tile_batch
 from data2text.data_utils import get_train_ents, extract_entities, extract_numbers
 
-flags = tf.flags
-flags.DEFINE_string("config_data", "config_data_nba", "The data config.")
+# flags = tf.flags
+# flags.DEFINE_string("config_data", "config_data_nba", "The data config.")
+
+dataset = 'e2e'
 
 # load all entities
-if 'nba' in flags.config_data:
+if 'nba' in dataset:
     all_ents, _, _, _ = get_train_ents(path=os.path.join("data2text", "rotowire"), connect_multiwords=True)
 else:
     all_ents = set()
@@ -53,7 +55,7 @@ def strip_special_tokens_of_list(text):
 batch_strip_special_tokens_of_list = batchize(strip_special_tokens_of_list)
 
 def replace_data_in_sent(sent, token="<UNK>"):
-    if 'nba' in flags.config_data:
+    if 'nba' in dataset:
         datas = extract_entities(sent, all_ents) + extract_numbers(sent)
         datas.sort(key=lambda data: data.start, reverse=True)
         for data in datas:
@@ -67,10 +69,14 @@ def replace_data_in_sent(sent, token="<UNK>"):
         return sent
 
 def corpus_bleu(list_of_references, hypotheses, **kwargs):
+    for i in range(1):
+        print("({}) Original Hypo: {}\nOriginal Ref: {}".format(i+1, hypotheses[i], list_of_references[i]))
     list_of_references = [
         list(map(replace_data_in_sent, refs))
         for refs in list_of_references]
     hypotheses = list(map(replace_data_in_sent, hypotheses))
+    for i in range(1):
+        print("({}) Masked Hypo: {}\nMasked Ref: {}".format(i+1, hypotheses[i], list_of_references[i]))
     return tx.evals.corpus_bleu_moses(
         list_of_references, hypotheses,
         lowercase=True, return_all=False,

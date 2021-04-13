@@ -20,7 +20,7 @@ from ie import get_precrec
 flags = tf.flags
 flags.DEFINE_string("dataset", "nba", "The dataset.")
 flags.DEFINE_string("config_data", "config_data", "The data config.")
-flags.DEFINE_string("config_model", "config_model_clean", "The model config.")
+flags.DEFINE_string("config_model", "config_model", "The model config.")
 flags.DEFINE_string("config_train", "config_train", "The training config.")
 flags.DEFINE_float("rec_w", 0.8, "Weight of reconstruction loss.")
 flags.DEFINE_float("rec_w_rate", 0., "Increasing rate of rec_w.")

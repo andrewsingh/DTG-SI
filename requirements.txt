@@ -30,8 +30,8 @@ jsonpickle==1.4
 Keras-Applications==1.0.7
 Keras-Preprocessing==1.0.9
 Markdown==3.0.1
-mkl-fft==1.0.10
-mkl-random==1.0.2
+# mkl-fft==1.0.10
+# mkl-random==1.0.2
 mock==2.0.0
 munkres==1.1.2
 nltk==3.4
@@ -47,7 +47,7 @@ pycparser==2.18
 pyOpenSSL==17.0.0
 pyparsing==2.2.0
 PySocks==1.6.6
-pyxDamerauLevenshtein==1.5.1
+pyxDamerauLevenshtein
 PyYAML==5.1.2
 regex==2020.4.4
 requests==2.21.0
@@ -65,10 +65,10 @@ tensorboard==1.12.0
 tensorflow==1.12.0
 tensorflow-estimator==1.13.0
 termcolor==1.1.0
--e git+https://github.com/asyml/texar.git@194fed32099b0bad23a68bce4066052a5c5badf1#egg=texar
-tqdm==4.32.1
+# -e git+https://github.com/asyml/texar.git@194fed32099b0bad23a68bce4066052a5c5badf1#egg=texar
+tqdm
 typed-ast==1.4.0
-urllib3==1.25.3
+urllib3
 Werkzeug==0.14.1
 yarn==0.0.8
 zipp==3.1.0
